@@ -2,13 +2,16 @@
 name = "catalysis_os"
 version = "0.1.0"
 edition = "2021"
+authors = ["Ayush Bindlish <ayushbindlish@gmail.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 
+# abort on panic to disable generation of unwinding symbol information for both dev and release builds
+# eh personality item no longer required
 [profile.dev]
-panic = "abort"
+panic = "abort" # disable stack unwinding on panic
 
 [profile.release]
-panic = "abort"
+panic = "abort" # disable stack unwinding on panic
